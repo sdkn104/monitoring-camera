@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<name>BackgroundSubtractor.MOG2</name>
+<backgroundRatio>8.9999997615814209e-01</backgroundRatio>
+<detectShadows>1</detectShadows>
+<fCT>5.0000000745058060e-02</fCT>
+<fTau>5.0000000000000000e-01</fTau>
+<fVarInit>15.</fVarInit>
+<fVarMax>75.</fVarMax>
+<fVarMin>4.</fVarMin>
+<history>500</history>
+<nShadowDetection>127</nShadowDetection>
+<nmixtures>5</nmixtures>
+<varThreshold>16.</varThreshold>
+<varThresholdGen>9.</varThresholdGen>
+<threshold>500</threshold>
+<event_gap>5</event_gap>
+<snapshot_interval>1</snapshot_interval>
+<output_pictures>1</output_pictures>
+<debug_point>
+  -1 -1</debug_point>
+<learningRate>1.0000000000000000e-02</learningRate>
+<max_outputs>0</max_outputs>
+<pre_capture>0</pre_capture>
+<target_dir>"."</target_dir>
+</opencv_storage>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<name>BackgroundSubtractor.MOG2</name>
+
+<backgroundRatio>0.9</backgroundRatio>   <!-- 0.9f : fTB=1-cf :  -->
+<detectShadows>0</detectShadows>   <!-- 1 : 1 -> do shadow detection -->
+<fCT>0.05</fCT>   <!-- 0.05f : CT - complexity reduction prior (minus bias to component weights) -->
+<fTau>0.5</fTau>   <!-- 0.5f :  shadow threshold -->
+<fVarInit>15.</fVarInit>   <!-- 15. -->
+<fVarMax>75.</fVarMax>   <!-- 4. -->
+<fVarMin>4.</fVarMin>   <!-- 5*fVarInit -->
+<history>500</history>  <!-- almost only used for 1st frame -->
+<nShadowDetection>127</nShadowDetection>   <!-- 127 -->
+<nmixtures>5</nmixtures>   <!-- 5 : maximum allowed number of mixture components -->
+<varThreshold>25.</varThreshold>   <!-- 4.0f*4.0f : Tb, related to Cthr ; threshold on the squared Mahalanobis distance to decide if it is well described by the background model or not. -->
+<varThresholdGen>9.</varThresholdGen>   <!-- 3.0f*3.0f : Tg ; threshold on the squared Mahalan. dist. to decide if a sample is close. 3*3 means 3sigma. -->
+
+<threshold>500</threshold>   <!-- #of pixes -->
+<event_gap>20</event_gap>   <!-- frames -->
+<snapshot_interval>600</snapshot_interval>   <!-- snapshot pictures  -->
+<output_pictures>1</output_pictures>    <!-- pictures/video per event. 0:off, 1:all -->
+<debug_point>630 240</debug_point> <!-- -1 for disable -->
+<learningRate>0.01</learningRate> <!-- 1/500? : alpha after 2nd frame -->
+<max_outputs>0</max_outputs> <!-- 0:infinite : max no of output pict files (including video file) -->
+<pre_capture>8</pre_capture> <!-- no of capture and output frames before motion detected -->
+<target_dir>"/home/sadakane/LS-YLA23/share/sadakane/motion/opencv/dev/bgsub/out"</target_dir>
+<limit_frames>9</limit_frames> <!-- program would exit when processed the specified number of frames -->
+</opencv_storage>
