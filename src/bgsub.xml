@@ -24,5 +24,5 @@
 <max_outputs>0</max_outputs> <!-- 0:infinite : max no of output pict files (including video file) -->
 <pre_capture>8</pre_capture> <!-- no of capture and output frames before motion detected -->
 <target_dir>"/home/sadakane/LS-YLA23/share/sadakane/motion/opencv/dev/bgsub/out"</target_dir>
-<limit_frames>9</limit_frames> <!-- program would exit when processed the specified number of frames -->
+<limit_frames>0</limit_frames> <!-- program would exit when processed the specified number of frames -->
 </opencv_storage>
