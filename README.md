@@ -10,7 +10,7 @@ monitoring-camera is a program that monitors the video signal from a camera and 
 
 It is similar program to [motion](https://github.com/Motion-Project/motion), but it uses 
 a background subtraction algorithm for motion detection that is included in OpenCV.
-Functions are very limited comrared with motion.
+Functions are very limited compared with motion.
 
 ## Requirement
 
@@ -23,7 +23,7 @@ Functions are very limited comrared with motion.
 
   * OpenCV 2.4.9.1
   * cmake 3.0.2
-  * Armbian (Linux) (https://www.armbian.com/orange-pi-one/)
+  * [Armbian](https://www.armbian.com/orange-pi-one/) (Linux) 
   * [Orange PI](http://www.orangepi.org/)  Computer board
 
 ## Usage
