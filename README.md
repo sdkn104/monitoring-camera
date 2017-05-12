@@ -15,16 +15,16 @@ Functions are very limited comrared with motion.
 ## Requirement
 
 * [OpenCV](http://opencv.org/)
-* cmake
+* [cmake](https://cmake.org/)
 
-  ref: http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_gcc_cmake/linux_gcc_cmake.html#linux-gcc-usage
+  see [OpenCV Guide](http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_gcc_cmake/linux_gcc_cmake.html#linux-gcc-usage)
 
 #### Tested on
 
   * OpenCV 2.4.9.1
   * cmake 3.0.2
   * Armbian (Linux) (https://www.armbian.com/orange-pi-one/)
-  * [Orange PI](http://www.orangepi.org/)
+  * [Orange PI](http://www.orangepi.org/)  Computer board
 
 ## Usage
 
@@ -42,6 +42,16 @@ To run:
     $ make install
     $ make clean-all
 
+## Acknowledgements
+
+This program uses the following software:
+
+#### [Labelling.h](http://imura-lab.org/products/labeling/)
+
 ## Author
 
 [sdkn104](https://github.com/sdkn104)
+
+## License
+
+This software is released under the [MIT](https://opensource.org/licenses/mit-license.php) License, see LICENSE.txt.
