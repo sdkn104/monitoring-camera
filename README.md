@@ -46,7 +46,7 @@ To run:
 
 This program uses the following software:
 
-#### [Labelling.h](http://imura-lab.org/products/labeling/)
+* [Labelling.h](http://imura-lab.org/products/labeling/)
 
 ## Author
 
