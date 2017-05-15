@@ -16,6 +16,8 @@
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
+#include <sys/resource.h>
+
 using namespace cv;
 using namespace std;
 
@@ -104,6 +106,7 @@ int max_outputs;
 int pre_capture;
 std::string target_dir;
 int limit_frames;
+int limit_rss;
 
 
 // LABEL
@@ -339,6 +342,7 @@ int main(int argc, char* argv[])
     pre_capture = 0;
     target_dir = ".";
     limit_frames = 0;
+    limit_rss = 0;
 
     cout << "writing out.xml..." << endl;
     FileStorage fsw("out.xml", FileStorage::WRITE);
@@ -353,6 +357,7 @@ int main(int argc, char* argv[])
     fsw << "pre_capture" << pre_capture;
     fsw << "target_dir" << target_dir;
     fsw << "limit_frames" << limit_frames;
+    fsw << "limit_rss" << limit_rss;
     fsw.release();
 
     cout << "reading bgsub.xml..." << endl;
@@ -368,6 +373,7 @@ int main(int argc, char* argv[])
     fs["pre_capture"] >> pre_capture;
     fs["target_dir"] >> target_dir;
     fs["limit_frames"] >> limit_frames;
+    fs["limit_rss"] >> limit_rss;
     fs.release();
 
     event_id = 0; // init
@@ -567,9 +573,17 @@ void handleFrame(int fno, const char *rootname) {
          pMyMOG2->debug_print(frame,debug_point.x,debug_point.y);
        }
 
-       if( limit_frames != 0 && fno >= limit_frames && status == -1 ) {
+       if( limit_frames != 0 && fno >= limit_frames && status == 0 ) {
          cout << "reached frame limit. exit..." << endl;
          exit(0);
+       }
+       struct rusage r;
+       if( fno % 10 == 0 && getrusage(RUSAGE_SELF, &r) == 0 ) {
+         cout << "RSS " << r.ru_maxrss << endl;
+         if( limit_rss != 0 && r.ru_maxrss > limit_rss && status == 0 ) {
+           cout << "over the RSS memory limit.  " << r.ru_maxrss << endl;
+           exit(0);
+         }
        }
 
 }

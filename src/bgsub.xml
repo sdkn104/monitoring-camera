@@ -25,4 +25,5 @@
 <pre_capture>8</pre_capture> <!-- no of capture and output frames before motion detected -->
 <target_dir>"/home/sadakane/LS-YLA23/share/sadakane/motion/opencv/dev/bgsub/out"</target_dir>
 <limit_frames>0</limit_frames> <!-- program would exit when processed the specified number of frames -->
+<limit_rss>0</limit_rss> <!-- program would exit when RSS [kB] exceeds the specified limit  -->
 </opencv_storage>
