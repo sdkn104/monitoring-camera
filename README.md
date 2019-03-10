@@ -32,6 +32,9 @@ To run:
 
     bgsub -vid 0
 
+Configuration file:
+
+    bgsub.xml  in current directory
 
 ## Install
 
