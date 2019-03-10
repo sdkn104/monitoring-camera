@@ -17,9 +17,9 @@
 
 <threshold>500</threshold>   <!-- #of pixes -->
 <event_gap>20</event_gap>   <!-- frames -->
-<snapshot_interval>600</snapshot_interval>   <!-- snapshot pictures  -->
+<snapshot_interval>600</snapshot_interval>   <!-- snapshot pictures: 0 for disable  -->
 <output_pictures>1</output_pictures>    <!-- pictures/video per event. 0:off, 1:all -->
-<debug_point>630 240</debug_point> <!-- -1 for disable -->
+<debug_point>630 240</debug_point> <!-- -1 -1 for disable -->
 <learningRate>0.01</learningRate> <!-- 1/500? : alpha after 2nd frame -->
 <max_outputs>0</max_outputs> <!-- 0:infinite : max no of output pict files (including video file) -->
 <pre_capture>8</pre_capture> <!-- no of capture and output frames before motion detected -->
