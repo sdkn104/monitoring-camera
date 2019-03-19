@@ -425,8 +425,11 @@ void handleFrame(int fno, const char *rootname) {
         cvtColor(cframe, frame, CV_HLS2RGB);
 #endif
 
-        //update the background model
-        pBGSub->operator()(frame, fgMask, learningRate); // fgMask:8UC1
+        // frame: current frame
+
+        // Computes a foreground mask (= a set of changed pixels)
+        pBGSub->operator()(frame, fgMask, learningRate); // fgMask:8UC1 // pBGSub->apply(...)
+        //update the background model and get it
         pBGSub->getBackgroundImage(bgImg);
 
         // check move
@@ -442,7 +445,7 @@ void handleFrame(int fno, const char *rootname) {
         int mvcnt2 = countNonZero(bin_img);
         //cout << mvcnt << " " << mvcnt2 << endl;
 
-        //labeling
+        //labeling connected-components of fg mask
         vector<LabelData> labels;
         Mat fgColor(fgMask.size(), CV_8UC3);
         cvtColor(fgMask, fgColor, CV_GRAY2RGB);
@@ -510,20 +513,20 @@ void handleFrame(int fno, const char *rootname) {
         putText(fgColor, frameNumberString.c_str(), cv::Point(1, 10),
                 FONT_HERSHEY_SIMPLEX, 0.35, cv::Scalar(0,0,0));
 
-
+        // output
         if( status == -1 ) { // end of event
             char s[500];
             sprintf(s,"%s/%s_fgsumm_%s_%04d.jpg",target_dir.c_str(), rootname, fid, event_id);
             myImwrite(s, fgSumm);
         }
 
-        //output
+        // output
         char s[500];
         if( ( max_outputs==0 || cnt_outputs <= max_outputs ) &&
             ( snapshot_interval && fno % snapshot_interval == 0 ) ) {
           cnt_outputs += 1;
           sprintf(s,"%s/%s_frame_%s_%04d.jpg",target_dir.c_str(), rootname, fid, event_id);
-          myImwrite(s, frame);
+          myImwrite(s, frame); // write snapshot
 	}
         if( ( max_outputs==0 || cnt_outputs <= max_outputs ) &&
             ( output_pictures == 1 ) ) {

@@ -15,15 +15,15 @@
 <varThreshold>25.</varThreshold>   <!-- 4.0f*4.0f : Tb, related to Cthr ; threshold on the squared Mahalanobis distance to decide if it is well described by the background model or not. -->
 <varThresholdGen>9.</varThresholdGen>   <!-- 3.0f*3.0f : Tg ; threshold on the squared Mahalan. dist. to decide if a sample is close. 3*3 means 3sigma. -->
 
-<threshold>500</threshold>   <!-- #of pixes -->
-<event_gap>20</event_gap>   <!-- frames -->
-<snapshot_interval>600</snapshot_interval>   <!-- snapshot pictures: 0 for disable  -->
-<output_pictures>1</output_pictures>    <!-- pictures/video per event. 0:off, 1:all -->
-<debug_point>630 240</debug_point> <!-- -1 -1 for disable -->
+<threshold>500</threshold>   <!-- #of changed pixes -->
+<event_gap>20</event_gap>   <!-- #of frames of no motion detection that triggers the end of an event -->
+<snapshot_interval>0</snapshot_interval>   <!-- #of frames per which a snapshot picture is written. 0 means no snapshot. -->
+<output_pictures>1</output_pictures>    <!-- summary-pictures and video output per event. 0:off, 1:all -->
+<debug_point>-1 -1</debug_point> <!-- -1 -1 for disable -->
 <learningRate>0.01</learningRate> <!-- 1/500? : alpha after 2nd frame -->
-<max_outputs>0</max_outputs> <!-- 0:infinite : max no of output pict files (including video file) -->
+<max_outputs>50</max_outputs> <!-- 0:infinite : max no of output pict files (including video file) -->
 <pre_capture>8</pre_capture> <!-- no of capture and output frames before motion detected -->
-<target_dir>"/home/sadakane/LS-YLA23/share/sadakane/motion/opencv/dev/bgsub/out"</target_dir>
-<limit_frames>0</limit_frames> <!-- program would exit when processed the specified number of frames -->
-<limit_rss>0</limit_rss> <!-- program would exit when RSS [kB] exceeds the specified limit  -->
+<target_dir>"/home/sadakane/bgsub/out"</target_dir>
+<limit_frames>0</limit_frames> <!-- program would exit when processed the specified number of frames. 0:off -->
+<limit_rss>0</limit_rss> <!-- program would exit when RSS [kB] exceeds the specified limit. 0:off  -->
 </opencv_storage>
