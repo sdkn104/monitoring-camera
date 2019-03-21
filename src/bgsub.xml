@@ -16,6 +16,7 @@
 <varThresholdGen>9.</varThresholdGen>   <!-- 3.0f*3.0f : Tg ; threshold on the squared Mahalan. dist. to decide if a sample is close. 3*3 means 3sigma. -->
 
 <threshold>500</threshold>   <!-- #of changed pixes -->
+<mask_file>"/home/sadakane/bgsub/detect_mask.png"</mask_file> <!-- The full path and filename for the masking file. The areas that you want detected must be white. -->
 <event_gap>20</event_gap>   <!-- #of frames of no motion detection that triggers the end of an event -->
 <snapshot_interval>0</snapshot_interval>   <!-- #of frames per which a snapshot picture is written. 0 means no snapshot. -->
 <output_pictures>1</output_pictures>    <!-- summary-pictures and video output per event. 0:off, 1:all -->
